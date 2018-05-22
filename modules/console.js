@@ -1,4 +1,5 @@
-exports.content = 'What is up great content'
+exports.content = 'What is up great content';
+
 
 /*
 // =====================
