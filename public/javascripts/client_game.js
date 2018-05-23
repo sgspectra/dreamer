@@ -3,6 +3,9 @@
 // =====================
 var output = $('.output');
 var input = $('textarea.input');
+
+// Set up the library of rooms and items and mobs for a one
+// dungeon game.
 var rooms = {
     'Hall':{
         'south': 'Kitchen'
