@@ -11,7 +11,8 @@ var toOutput;
 input.keypress(function(e) {
     if (e.which == 13) {
         var inputVal = $.trim(input.val());
-        //console.log(inputVal);
+        inputVal = inputVal.split(" ")[0];
+        console.log(inputVal);
 
         if (inputVal == "help") {
             help();
