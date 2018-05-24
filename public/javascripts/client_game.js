@@ -19,17 +19,17 @@ var currentLocation = 'Hall';
 var inventory = [];
 
 
-// Creates the event listner for the comands ==
-// Yes this is a long one - could do with some
-// improvements ===============================
+//create listener for commands
 input.keypress(function(e) {
     if (e.which == 13) {
         var inputVal = $.trim(input.val());
         inputVal = inputVal.split(" ");
         console.log(inputVal[0]);
+        //if the first word is get
         if(inputVal[0] == 'get'){
             console.log(inputVal[1]);
         }
+        //if the first word in the command is go
         if(inputVal[0] == 'go'){
             console.log(inputVal[1]);
             if(inputVal[1] in rooms[currentLocation]){
@@ -43,7 +43,6 @@ input.keypress(function(e) {
 });
 
 // functions related to the commands typed
-// =======================================
 
 // prints out a seperator
 function seperator() {
