@@ -8,7 +8,8 @@ var input = $('textarea.input');
 // dungeon game.
 var rooms = {
     'Hall':{
-        'south': 'Kitchen'
+        'south': 'Kitchen',
+        'item': 'Knife'
     },
     'Kitchen':{
         'north': 'Hall'
@@ -28,6 +29,11 @@ input.keypress(function(e) {
         //if the first word is get
         if(inputVal[0] == 'get'){
             console.log(inputVal[1]);
+            if(('item' in rooms[currentLocation])&&(inputVal[1] == rooms[currentLocation]['item'])){
+                inventory.push(inputVal[1]);
+            }else{
+                console.log('Item does not exist');
+            }
         }
         //if the first word in the command is go
         if(inputVal[0] == 'go'){
