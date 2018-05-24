@@ -15,6 +15,10 @@ var rooms = {
     }
 };
 
+var currentLocation = 'Hall';
+var inventory = [];
+
+
 // Creates the event listner for the comands ==
 // Yes this is a long one - could do with some
 // improvements ===============================
@@ -24,9 +28,17 @@ input.keypress(function(e) {
         inputVal = inputVal.split(" ");
         console.log(inputVal[0]);
         if(inputVal[0] == 'get'){
-            console.log(inputVal[1])
+            console.log(inputVal[1]);
         }
-
+        if(inputVal[0] == 'go'){
+            console.log(inputVal[1]);
+            if(inputVal[1] in rooms[currentLocation]){
+                currentLocation = rooms[currentLocation][inputVal[1]];
+            }else{
+                console.log("You cannot go that way");
+            }
+        }
+        input.val('');
     }
 });
 
