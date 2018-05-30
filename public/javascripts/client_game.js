@@ -65,7 +65,8 @@ var rooms = {
         'staircase': 'stairs2'
     },
     'stairs2':{
-        'west': 'hall5'
+        'west': 'hall5',
+        'staircase': 'stairs1'
     },
     'bedroom1':{
         'south': 'hall6',
