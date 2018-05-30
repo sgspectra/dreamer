@@ -26,6 +26,21 @@ var rooms = {
         'east': 'hall1',
         'west': 'study'
     },
+    'hall5':{
+        'east': 'stairs2',
+        'west': 'hall6'
+    },
+    'hall6':{
+        'north': 'bedroom1',
+        'east': 'hall5',
+        'south': 'bedroom2',
+        'west': 'hall7'
+    },
+    'hall7':{
+        'north': 'bathroom',
+        'east': 'hall6',
+        'west': 'master'
+    },
     'kitchen':{
         'south': 'hall1',
         'west': 'laundry'
@@ -47,7 +62,37 @@ var rooms = {
     },
     'stairs1':{
         'west': 'hall2',
-        'staircase': 'lvl2'
+        'staircase': 'stairs2'
+    },
+    'stairs2':{
+        'west': 'hall5'
+    },
+    'bedroom1':{
+        'south': 'hall6',
+        'west': 'bathroom'
+    },
+    'bedroom2':{
+        'north': 'hall6',
+        'south': 'balcony1'
+    },
+    'bathroom':{
+        'east': 'bedroom1',
+        'south': 'hall7'
+    },
+    'master':{
+        'east': 'hall7',
+        'south': 'ensuite',
+        'west': 'balcony2'
+        'item': 'studykey'
+    },
+    'ensuite':{
+        'north': 'master'
+    },
+    'balcony1':{
+        'north': 'bedroom2'
+    },
+    'balcony2':{
+        'east': 'master'
     }
 };
 
