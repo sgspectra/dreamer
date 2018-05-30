@@ -7,12 +7,47 @@ var input = $('textarea.input');
 // Set up the library of rooms and items and mobs for a one
 // dungeon game.
 var rooms = {
-    'Hall':{
-        'south': 'Kitchen',
-        'item': 'Knife'
+    'hall1':{
+        'north': 'kitchen',
+        'east': 'hall2',
+        'south': 'hall3',
+        'west': 'hall4'
     },
-    'Kitchen':{
-        'north': 'Hall'
+    'hall2':{
+        'east': 'stairs1',
+        'west': 'hall1'
+    },
+    'hall3':{
+        'north': 'hall1',
+        'south': 'foyer'
+    },
+    'hall4':{
+        'north': 'laundry',
+        'east': 'hall1',
+        'west': 'study'
+    },
+    'kitchen':{
+        'south': 'hall1',
+        'west': 'laundry'
+    },
+    'laundry':{
+        'east': 'kitchen',
+        'south': 'hall4'
+    },
+    'study':{
+        'east': 'hall4',
+        'south': 'office',
+        'item': 'frontdoorkey'
+    },
+    'office':{
+        'north': 'study'
+    },
+    'foyer':{
+        'north': 'hall3'
+    },
+    'stairs1':{
+        'west': 'hall2',
+        'staircase': 'lvl2'
     }
 };
 
