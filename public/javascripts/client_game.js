@@ -83,7 +83,7 @@ var rooms = {
     'master':{
         'east': 'hall7',
         'south': 'ensuite',
-        'west': 'balcony2'
+        'west': 'balcony2',
         'item': 'studykey'
     },
     'ensuite':{
@@ -97,7 +97,7 @@ var rooms = {
     }
 };
 
-var currentLocation = 'Hall';
+var currentLocation = 'bedroom1';
 var inventory = [];
 
 
@@ -126,23 +126,29 @@ input.keypress(function(e) {
             }
         }
         input.val('');
+        status();
     }
 });
 
 // functions related to the commands typed
 
 // prints out a seperator
-function seperator() {
+function seperator(){
     Output('<span class="seperator">== == == == == == == == == == == == == == == == == ==</span></br>');
 }
 
 //clears the screen
-function clearConsole() {
+function clearConsole(){
     output.html("");
     Output('<span>clear</span></br>');
 }
 
 // Prints out the result of the command into the output div
-function Output(data) {
+function Output(data){
     $(data).appendTo(output);
+}
+
+// Print info about where you are
+function status(){
+    Output('<p>You are in ' + currentLocation + '.</p>')
 }
