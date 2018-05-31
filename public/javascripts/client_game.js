@@ -29,14 +29,16 @@ var rooms = {
     },
     'hall5':{
         'east': 'stairs2',
-        'west': 'hall6'
+        'west': 'hall6',
+        'desc': 'The hallway continues to the west, but you see a staircase to the east.'
     },
     'hall6':{
         'north': 'bedroom1',
         'east': 'hall5',
         'south': 'bedroom2',
         'west': 'hall7',
-        'description': 'This appears to be your upstairs hallway, but you swear you lived in a studio apartment.',
+        'desc': 'This appears to be a hallway, but you swear you lived in a studio apartment. The hallway ' +
+        'continues to the east and west. There is a door to a second bedroom to the south.',
         'mob': 'bat'
     },
     'hall7':{
@@ -73,11 +75,14 @@ var rooms = {
     },
     'bedroom1':{
         'south': 'hall6',
-        'west': 'bathroom'
+        'west': 'bathroom',
+        'desc': 'This is the room you woke up in, it looks like there is a bathroom to the west. To the south ' +
+        'you see a door to a hallway'
     },
     'bedroom2':{
         'north': 'hall6',
-        'south': 'balcony1'
+        'south': 'balcony1',
+        'desc': 'Another bedroom, is this your place? You don\'t remember the balcony to the south.'
     },
     'bathroom':{
         'east': 'bedroom1',
@@ -114,6 +119,7 @@ var player = {
     'health': 3
 };
 
+seperator();
 Output('<p>You awake in the bed you fell asleep in, but something ' +
     'seems different. Groggily, you get out of bed...</p>');
 healthStatus();
@@ -130,6 +136,7 @@ input.keypress(function(e) {
             console.log(inputVal[1]);
             if(('item' in rooms[currentLocation])&&(inputVal[1] == rooms[currentLocation]['item'])){
                 inventory.push(inputVal[1]);
+                delete rooms[currentLocation]['item'];
             }else{
                 Output('<p>Item does not exist!</p>');
                 console.log('Item does not exist');
@@ -174,7 +181,10 @@ function Output(data){
 //print info about where you are
 function locationStatus(){
     Output('<p>You are in ' + currentLocation + '.</p>');
-    Output('<p>'+rooms[currentLocation]['description']+'</p>');
+    Output('<p>'+rooms[currentLocation]['desc']+'</p>');
+    if('item' in rooms[currentLocation]){
+        Output('<p>You see a ' + rooms[currentLocation]['item'] + '.</p>');
+    }
 }
 
 //print health info
