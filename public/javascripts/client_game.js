@@ -35,7 +35,9 @@ var rooms = {
         'north': 'bedroom1',
         'east': 'hall5',
         'south': 'bedroom2',
-        'west': 'hall7'
+        'west': 'hall7',
+        'description': 'This appears to be your upstairs hallway, but you swear you lived in a studio apartment.',
+        'mob': 'bat'
     },
     'hall7':{
         'north': 'bathroom',
@@ -98,10 +100,24 @@ var rooms = {
     }
 };
 
+//set up library of baddies
+var baddies = {
+    'bat':{
+        'health': 1,
+        'attack': 1,
+        'accuracy': .1
+    }
+};
+
 //information about the player
 var player = {
     'health': 3
 };
+
+Output('<p>You awake in the bed you fell asleep in, but something ' +
+    'seems different. Groggily, you get out of bed...</p>');
+healthStatus();
+var currentLocation = 'bedroom1';
 
 //create listener for commands
 input.keypress(function(e) {
@@ -115,6 +131,7 @@ input.keypress(function(e) {
             if(('item' in rooms[currentLocation])&&(inputVal[1] == rooms[currentLocation]['item'])){
                 inventory.push(inputVal[1]);
             }else{
+                Output('<p>Item does not exist!</p>');
                 console.log('Item does not exist');
             }
         }
@@ -124,11 +141,15 @@ input.keypress(function(e) {
             if(inputVal[1] in rooms[currentLocation]){
                 currentLocation = rooms[currentLocation][inputVal[1]];
             }else{
+                Output('<p>You cannot go that way!</p>');
                 console.log("You cannot go that way");
             }
         }
+        if('mob' in rooms[currentLocation]){
+            encounter();
+        }
         input.val('');
-        status();
+        locationStatus();
     }
 });
 
@@ -150,7 +171,29 @@ function Output(data){
     $(data).appendTo(output);
 }
 
-// Print info about where you are
-function status(){
-    Output('<p>You are in ' + currentLocation + '.</p>')
+//print info about where you are
+function locationStatus(){
+    Output('<p>You are in ' + currentLocation + '.</p>');
+    Output('<p>'+rooms[currentLocation]['description']+'</p>');
+}
+
+//print health info
+function healthStatus(){
+    Output('<p>HP: ' + player.health + '</p>');
+
+}
+
+//define a function fo an encounter
+function encounter(){
+    var enemy = rooms[currentLocation]['mob'];
+    Output('<p>You have encountered a '+ enemy + '!</p>');
+    var enemyHealth = baddies[enemy]['health'];
+    var enemyAttack = baddies[enemy]['attack'];
+    if(Math.random() < baddies[enemy]['accuracy']){
+        player['health'] = player['health'] - enemyAttack;
+        Output('<p>You have been hit for ' + enemyAttack +' damage.</p>');
+        healthStatus();
+    }else{
+        Output('<p>The ' + enemy + ' attacked but it missed!</p>');
+    }
 }
