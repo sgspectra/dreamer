@@ -157,6 +157,7 @@ input.keypress(function(e) {
         }
         input.val('');
         locationStatus();
+        seperator();
     }
 });
 
