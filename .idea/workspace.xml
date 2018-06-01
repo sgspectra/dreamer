@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a876811-8b9f-48f2-afd9-14bc010b4506" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/javascripts/index_client.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/game.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/client_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/game_client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
-    </list>
+    <list default="true" id="7a876811-8b9f-48f2-afd9-14bc010b4506" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -179,6 +171,12 @@
             <path>
               <item name="dreamer" type="b2602c69:ProjectViewProjectNode" />
               <item name="dreamer" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dreamer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dreamer" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -279,16 +277,15 @@
       <workItem from="1527121022174" duration="2073000" />
       <workItem from="1527684161100" duration="6832000" />
       <workItem from="1527793639651" duration="107000" />
-      <workItem from="1527793809193" duration="2145000" />
+      <workItem from="1527793809193" duration="2921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30239000" />
+    <option name="totallyTimeSpent" value="31015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="23" width="1219" height="771" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
