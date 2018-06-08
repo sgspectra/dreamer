@@ -12,15 +12,18 @@ var rooms = {
         'north': 'kitchen',
         'east': 'hall2',
         'south': 'hall3',
-        'west': 'hall4'
+        'west': 'hall4',
+        'desc': 'From this hall you see the kitchen to the north. The hall continues in all other directions.'
     },
     'hall2':{
         'east': 'stairs1',
-        'west': 'hall1'
+        'west': 'hall1',
+        'desc': 'To the east, you see what looks like a stairway.'
     },
     'hall3':{
         'north': 'hall1',
-        'south': 'foyer'
+        'south': 'foyer',
+        'desc': 'To the south you see what looks like the entryway.'
     },
     'hall4':{
         'north': 'laundry',
@@ -44,34 +47,45 @@ var rooms = {
     'hall7':{
         'north': 'bathroom',
         'east': 'hall6',
-        'west': 'master'
+        'west': 'master',
+        'desc': 'This hallway continues to the west where you see the master bedroom. To your north, ' +
+        'you see a bathroom.'
     },
     'kitchen':{
         'south': 'hall1',
-        'west': 'laundry'
+        'west': 'laundry',
+        'desc': 'It seems like this kitchen was used not too long ago. You see a laundry room to the west.'
     },
     'laundry':{
         'east': 'kitchen',
-        'south': 'hall4'
+        'south': 'hall4',
+        'item': 'tide pod',
+        'desc': 'Hmmm tasty tide pods...'
     },
     'study':{
         'east': 'hall4',
         'south': 'office',
-        'item': 'frontdoorkey'
+        'item': 'frontdoorkey',
+        'desc': 'This room smells of rich mahogany. To the south you see a door.'
     },
     'office':{
-        'north': 'study'
+        'north': 'study',
+        'desc': 'This must be an office. There are papers strewn about the desk and the safe is ajar.'
     },
     'foyer':{
-        'north': 'hall3'
+        'north': 'hall3',
+        'south': 'exit',
+        'desc': 'You see a coat rack. There is an umbrella in a stand. Oh and is that the exit?'
     },
     'stairs1':{
         'west': 'hall2',
-        'staircase': 'stairs2'
+        'staircase': 'stairs2',
+        'desc': 'A staircase goes up.'
     },
     'stairs2':{
         'west': 'hall5',
-        'staircase': 'stairs1'
+        'staircase': 'stairs1',
+        'desc': 'A staircase goes down.'
     },
     'bedroom1':{
         'south': 'hall6',
@@ -86,22 +100,28 @@ var rooms = {
     },
     'bathroom':{
         'east': 'bedroom1',
-        'south': 'hall7'
+        'south': 'hall7',
+        'desc': 'This bathroom smells of bleach. The tub is suspiciously clean.'
     },
     'master':{
         'east': 'hall7',
         'south': 'ensuite',
         'west': 'balcony2',
-        'item': 'studykey'
+        'item': 'studykey',
+        'desc': 'This is the master bedroom. You see a key on the nightstand near the bed. To the south you see the ' +
+        'master bath. To the west, a balcony with a view.'
     },
     'ensuite':{
-        'north': 'master'
+        'north': 'master',
+        'desc': 'You notice a damp towel on the floor.'
     },
     'balcony1':{
-        'north': 'bedroom2'
+        'north': 'bedroom2',
+        'desc': 'From this balcony you can see the front yard. The lawn could use mowing.'
     },
     'balcony2':{
-        'east': 'master'
+        'east': 'master',
+        'desc': 'The view to the west is of an ominous mountain range.'
     }
 };
 
